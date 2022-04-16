@@ -33,11 +33,6 @@ float PrecioUnitario(float num1, float num2){
 	return numero;
 }
 
-void MostrarPrecioUnitario(float num1, float num2){
-	printf("\nprecio unitario Aerolineas=$ %f\n", num1);
-	printf("\nprecio unitario Latam=$ %f\n", num2);
-}
-
 float CalcularMayorPrecio(float num1, float num2){
 
 	float numero;

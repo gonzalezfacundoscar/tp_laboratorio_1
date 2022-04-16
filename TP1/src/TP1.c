@@ -72,7 +72,7 @@ int main() {
 
 		switch(opcionIngresada){
 			case 1:
-				kilometroIngresado=PedirEntero("ingrese kilometros=");
+				kilometroIngresado=PedirFlotante("ingrese kilometros=");
 				kilometroIngresado=ValidarPositivos(kilometroIngresado);
 				system("pause");
 				flagOpcUno=1;

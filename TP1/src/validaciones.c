@@ -27,21 +27,22 @@ void MostrarMenu(){
 	printf("6. Salir. \n");
 }
 
-/// @param opcion
-/// @param bandera
-/// @return
-
-float PedirEntero(char* mensaje){
-	float numero;
+int PedirEntero(char* mensaje){
+	int numero;
 
 	printf("%s", mensaje);
-	scanf("%f", & numero);
-
+	scanf("%d", & numero);
 	return numero;
 }
 
-/// @param bandera
-/// @return
+float PedirFlotante(char* mensaje){
+	float numero;
+
+		printf("%s", mensaje);
+		scanf("%f", &numero);
+		return numero;
+}
+
 int ValidarIngresoAnterior(int bandera){
 
 	int numero=0;
@@ -49,13 +50,10 @@ int ValidarIngresoAnterior(int bandera){
 	if(bandera == 0){
 		numero=1;
 	}
-
 	return numero;
-
 	}
 
 
-/// @param numero
 float ValidarPositivos(float numero){
 
 	float aux;
