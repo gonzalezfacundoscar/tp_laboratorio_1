@@ -49,7 +49,6 @@ int main() {
 	int flagOpcUno=0;
 	int flagOpcDos=0;
 	int flagOpcTres=0;
-	int flagOpcCuatro=0;
 	float precioAerolineas=0;
 	float precioLatam=0;
 	float debitoAerolineas;
@@ -102,24 +101,17 @@ int main() {
 				}
 					debitoAerolineas=CalcularDiezPorcientoDescuento(precioAerolineas);
 					debitoLatam=CalcularDiezPorcientoDescuento(precioLatam);
-					printf("%f", debitoAerolineas);
-
 					creditoAerolineas=CalcularVeinticincoPorcientoInteres(precioAerolineas);
 					creditoLatam=CalcularVeinticincoPorcientoInteres(precioLatam);
-
 					bitcoinAerolineas=CalcularBitcoin(precioAerolineas);
 					bitcoinLatam=CalcularBitcoin(precioLatam);
-
 					precioUnitarioAerolineas=PrecioUnitario(precioAerolineas,kilometroIngresado);
 					precioUnitarioLatam=PrecioUnitario(precioLatam,kilometroIngresado);
-					MostrarPrecioUnitario(precioUnitarioAerolineas, precioUnitarioLatam);
-
 					mayorPrecio=CalcularMayorPrecio(precioAerolineas, precioLatam);
 					menorPrecio=CalcularMenorPrecio(precioAerolineas, precioLatam);
 					diferenciaDePrecio=CalcularDiferenciaPrecio(mayorPrecio,menorPrecio);
-					printf("diferencia de precio es = %f\n",diferenciaDePrecio);
-
-				system("pause");
+					printf("\n Datos calculados correctamente. \n");
+					system("pause");
 
 				flagOpcTres=1;
 				break;
@@ -130,18 +122,26 @@ int main() {
 					system("pause");
 					break;
 				}
-
-				flagOpcCuatro=1;
+				MostrarResultados(debitoLatam, creditoLatam, bitcoinLatam, precioUnitarioLatam, debitoAerolineas, creditoAerolineas, bitcoinAerolineas, precioUnitarioAerolineas, diferenciaDePrecio);
 				system("pause");
 				break;
 			case 5:
-				ValidarIngresoAnterior(flagOpcCuatro);
-				if(ValidarIngresoAnterior(flagOpcUno)==1){
-					printf("No ingreso la opcion anterior, Por favor vuelva al menu:\n");
-					system("pause");
-					break;
-				}
-
+				kilometroIngresado=7090;
+				precioAerolineas=162965;
+				precioLatam=159339;
+				debitoAerolineas=CalcularDiezPorcientoDescuento(precioAerolineas);
+				debitoLatam=CalcularDiezPorcientoDescuento(precioLatam);
+				creditoAerolineas=CalcularVeinticincoPorcientoInteres(precioAerolineas);
+				creditoLatam=CalcularVeinticincoPorcientoInteres(precioLatam);
+				bitcoinAerolineas=CalcularBitcoin(precioAerolineas);
+				bitcoinLatam=CalcularBitcoin(precioLatam);
+				precioUnitarioAerolineas=PrecioUnitario(precioAerolineas,kilometroIngresado);
+				precioUnitarioLatam=PrecioUnitario(precioLatam,kilometroIngresado);
+				mayorPrecio=CalcularMayorPrecio(precioAerolineas, precioLatam);
+				menorPrecio=CalcularMenorPrecio(precioAerolineas, precioLatam);
+				diferenciaDePrecio=CalcularDiferenciaPrecio(mayorPrecio,menorPrecio);
+				MostrarResultados(debitoLatam, creditoLatam, bitcoinLatam, precioUnitarioLatam, debitoAerolineas, creditoAerolineas, bitcoinAerolineas, precioUnitarioAerolineas, diferenciaDePrecio);
+				system("pause");
 				break;
 			case 6:
 				salir='s';

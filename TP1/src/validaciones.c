@@ -3,15 +3,15 @@
 
 void MostrarMenu(){
 	printf("*** MENU DE OPCIONES. *** \n\n");
-	printf("1. Ingrese kilometros. (km = x)\n\n");
-	printf("2. Ingrese precio de vuelo. (Aerolineas=y, Latam=z)\n\n");
-	printf("3. Calcular costos: \n\n");
+	printf("1. Ingrese kilometros. (km = x)\n");
+	printf("2. Ingrese precio de vuelo. (Aerolineas=y, Latam=z)\n");
+	printf("3. Calcular costos: \n");
 	printf("	a) Tarjeta de debito: (descuento del 10) \n");
 	printf("	b) Tarjeta de credito: (interés del 25) \n");
 	printf("	c) Bitcoin: (1BTC -> 4606954.55 Pesos Argentinos)\n");
 	printf("	d) Mostrar precio por km (precio unitario)\n");
 	printf("	e) Mostrar diferencia de precio ingresada (Latam - Aerolíneas)\n\n");
-	printf("4. Informar resultados: \n\n");
+	printf("4. Informar resultados: \n");
 	printf("“Latam: \n");
 	printf("	a) Precio con tarjeta de débito: \n");
 	printf("	b) Precio con tarjeta de crédito: \n");
@@ -23,22 +23,25 @@ void MostrarMenu(){
 	printf("	c) Precio pagando con bitcoin :\n");
 	printf("	d) Precio unitario: \n");
 	printf("	La diferencia de precio es: \n\n");
-	printf("5. Carga Forzada. \n\n");
+	printf("5. Carga Forzada. \n");
 	printf("6. Salir. \n");
 }
+
 /// @param opcion
 /// @param bandera
 /// @return
 
-int PedirEntero(char* mensaje){
-	int numero;
+float PedirEntero(char* mensaje){
+	float numero;
 
 	printf("%s", mensaje);
-	scanf("%d", & numero);
+	scanf("%f", & numero);
 
 	return numero;
 }
 
+/// @param bandera
+/// @return
 int ValidarIngresoAnterior(int bandera){
 
 	int numero=0;
@@ -55,7 +58,7 @@ int ValidarIngresoAnterior(int bandera){
 /// @param numero
 float ValidarPositivos(float numero){
 
-	int aux;
+	float aux;
 
 	while(numero<0){
 
@@ -68,18 +71,18 @@ float ValidarPositivos(float numero){
 
 }
 
-void MostrarResultados(int num1, int num2, int num3, int num4){
+void MostrarResultados(float num1, float num2, float num3, float num4, float num5, float num6, float num7, float num8, float num9){
 
 	printf("“Latam: \n");
-	printf("a) Precio con tarjeta de débito: \n");
-	printf("b) Precio con tarjeta de crédito: \n");
-	printf("c) Precio pagando con bitcoin: \n");
-	printf("d) Precio unitario: \n\n");
+	printf("a) Precio con tarjeta de débito: %.2f\n", num1);
+	printf("b) Precio con tarjeta de crédito: %.2f\n", num2);
+	printf("c) Precio pagando con bitcoin: %f\n", num3);
+	printf("d) Precio unitario: %.2f\n\n", num4);
 	printf("Aerolíneas: \n");
-	printf("a) Precio con tarjeta de débito:\n");
-	printf("b) Precio con tarjeta de crédito:\n");
-	printf("c) Precio pagando con bitcoin :\n");
-	printf("d) Precio unitario: \n");
-	printf(" La diferencia de precio es: ");
+	printf("a) Precio con tarjeta de débito: %.2f\n", num5);
+	printf("b) Precio con tarjeta de crédito: %.2f\n", num6);
+	printf("c) Precio pagando con bitcoin : %f\n", num7);
+	printf("d) Precio unitario: %.2f\n", num8);
+	printf(" La diferencia de precio es: %.2f\n", num9);
 }
 

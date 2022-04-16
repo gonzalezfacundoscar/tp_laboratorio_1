@@ -4,7 +4,7 @@
 float CalcularDiezPorcientoDescuento(float numero){
 
 	float aux;
-	aux = numero- (10*numero/100);
+	aux = numero-(10*numero/100);
 	return aux;
 }
 
@@ -20,15 +20,16 @@ float CalcularBitcoin(float numero){
 	float aux;
 	float bitcoin;
 
-	bitcoin=4651018.94;
+	bitcoin=4606954.55;
 
-	aux=(float)numero/bitcoin;
+	aux=numero/bitcoin;
 	return aux;
 }
 
 float PrecioUnitario(float num1, float num2){
+
 	float numero;
-	numero= (float) num1/num2;
+	numero= num1/num2;
 	return numero;
 }
 
@@ -39,7 +40,7 @@ void MostrarPrecioUnitario(float num1, float num2){
 
 float CalcularMayorPrecio(float num1, float num2){
 
-	int numero;
+	float numero;
 
 	if(num1>num2){
 		numero=num1;
@@ -52,6 +53,7 @@ float CalcularMayorPrecio(float num1, float num2){
 float CalcularMenorPrecio(float num1, float num2){
 
 	float numero;
+
 		if(num1<num2){
 			numero=num1;
 		}else{
@@ -65,10 +67,4 @@ float CalcularDiferenciaPrecio(float num1, float num2){
 	numero=num1-num2;
 	return numero;
 
-}
-
-void MostrarCalculoDebito(float num1, float num2){
-
-	printf("El calculo con debito Aerolineas es: %f\n", num1);
-	printf("El calculo con debito Latam es: %f\n", num2);
 }
